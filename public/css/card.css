@@ -1,0 +1,278 @@
+/* .card-controll {
+  width: 209px;
+  height: 243px;
+  margin-left: 2vh;
+  margin-right: 2vw;
+  margin-top: 2vh;
+  box-shadow: #00b7d3;
+  filter: drop-shadow(0px 0px 5px #00b7d370);
+  border-radius: 15px;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+  z-index: 10;
+} */
+.card {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+.normal:hover{
+  transform: none;
+}
+.card-logo {
+  font-size: 10rem; /* Atur ukuran secara manual */
+  color: #007bff; /* Opsional: ubah warna ikon */
+}
+.top-control-card {
+  height: 50%;
+  width: 209px;
+  background-image: url("../assets/icon/lamp_off.png  ");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.top-control-card:before {
+  background-image: url("lamp_on.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.bot-control-card {
+  padding: 10%;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+  height: 50%;
+  width: 100%;
+  /* background-color: #00b7d3; */
+}
+.card-monitor{
+  width: 455px;
+  height: 243px;
+  margin-left: 2vh;
+  margin-right: 2vw;
+  margin-top: 2vh;
+  box-shadow: #00b7d3;
+  filter: drop-shadow(0px 0px 5px #00b7d370);
+  border-radius: 15px;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+}
+.chart-monitor{
+  width: 455px;
+  height: 243px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+.top-monitor-card {
+  height: 50%;
+  width: 455px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  /* background-color: #cccccc; */
+  background-image: url();
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.popup-alert {
+  
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1050; /* Pastikan di atas elemen lain */
+  min-width: 300px;
+  display: none; /* Default tersembunyi */
+}
+
+#humidity {
+  width: 73px;
+  height: 73px;
+}
+.humidity {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#suhu {
+  width: 73px;
+  height: 56px;
+}
+.suhu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.bot-monitor-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 50%;
+  width: 100%;
+  /* background-color: #00b7d3; */
+  border-radius: 0 0 15px 15px;
+}
+.bot-monitor-card p{
+  color: black;
+  font-family: Poppins;
+  font-size: 20px;
+   margin-left: 10px;
+}
+.bot-control-card p{
+  color: rgb(40, 40, 40);
+  font-family: Poppins;
+  font-size: 20px;
+   margin-left: 10px;
+}
+/* The switch - the box around the slider */
+.switch {
+  border: 1px #0000 solid;
+  margin-left: 120px;
+  position: relative;
+  display: inline-block;
+  width: 70px;
+  height: 30px;
+  padding: 1px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid black;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+  background-color: #fff;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 2px;
+  bottom: 0px;
+  background-color: #9dff46;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .top-control-card:before {
+  background-color: #9dff46;
+  background-image: url("lamp_on.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+input:checked + .slider:before {
+  -webkit-transform: translateX(37px);
+  -ms-transform: translateX(37px);
+  transform: translateX(37px);
+  background-color: #fffd15;
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+#controls {
+  width: 97vw;
+  transition: 2s;
+  display: none;
+  /* align-items: center; */
+  flex-wrap: wrap;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  transition: 2s;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f100;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #00b7d300;
+  border-radius: 15px;
+  opacity: 0;
+  transition: 2s;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #00b7d3;
+  opacity: 100;
+}
+#main_control {
+  height: 100vh;
+  width: 75vw;
+  overflow-y: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  /* justify-content:center ; */
+}
+#not_found {
+  height: 90vh;
+  width: 70vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  filter: drop-shadow(5px 5px 5px #00b7d370);
+}
+#not_found > p {
+  font-family: poppins;
+  color: #00b7d3;
+  font-size: 5vh;
+  filter: drop-shadow(5px 5px 5px #00b7d370);
+}
+#icon_not_found {
+  width: 40vh;
+
+}
+.card-main{
+  height: auto;
+}
+@keyframes ring {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.bell-ring {
+  animation: ring 0.5s infinite;
+}
